@@ -3,7 +3,7 @@ from .forms import UserRegisterForm
 from django.core.mail import send_mail
 from uuid import uuid4
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login,authenticate
+from django.contrib.auth import get_user_model, login,authenticate,logout
 from django.conf import settings
 User = get_user_model()
 
@@ -61,4 +61,7 @@ def send_confirmation_email(request,email):
     recipient_list = [email]
     send_mail(subject, message, from_email, recipient_list)
 
-    
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
