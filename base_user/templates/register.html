@@ -17,8 +17,10 @@
       <div class="overlay">
         <div class="login">
           <h1>Welcome</h1>
+          
           <form class="login-form" method="POST">
               {% csrf_token %}
+              {{form.errors}}
             {{form.email}}
             {{form.password1}}
             {{form.password2}}
