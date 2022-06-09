@@ -93,7 +93,7 @@ else:
             'HOST': 'localhost',       
             'PORT': '',    
         }
-
+    }
 
 
 # Password validation
