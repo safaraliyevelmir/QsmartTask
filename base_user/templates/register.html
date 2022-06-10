@@ -20,7 +20,7 @@
           
           <form class="login-form" method="POST">
               {% csrf_token %}
-              {{form.errors}}
+            <span style="color: white;">{{form.password2.errors}}</span>
             {{form.email}}
             {{form.password1}}
             {{form.password2}}

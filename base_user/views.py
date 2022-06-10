@@ -15,6 +15,10 @@ def loginUser(request):
         if user_obj is None:
             messages.error(request,"User not found")
             return redirect('login')
+        if user_obj.is_active == False:
+            messages.error(request,"This account is not verifed")
+            return redirect("login")
+        
         user = authenticate(email=email,password=password)
         
         if user is not None:
